@@ -2,11 +2,11 @@
 
 ## Atualize os seus dados
 
-- Nome:
-- Matrícula:
-- Curso:
-- Semestre/Ano correntes:
-- Link para o seu GitHub:
+- Nome: Caio Damasceno Alves
+- Matrícula: 18.2.8076
+- Curso: Sistemas de Informação
+- Semestre/Ano correntes: 22/2
+- Link para o seu GitHub: github.com/CaioDamascenoAlves
 
 ## [Projeto final:](./Projeto/README.md)
 

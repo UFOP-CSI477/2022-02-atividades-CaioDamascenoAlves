@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao JavaScript</title>
+
+    <script>
+
+        let contador = 0;
+        var cont = 0;
+
+        function carregarDados() {
+            document.getElementById('data').innerHTML = Date();
+            
+            const nome = window.prompt('Insira o seu nome:'); 
+        }
+
+        function carregarDadosForm() {
+            const nome = document.formDados.nome.value;
+            const idade = document.getElementById("age").value;
+            console.log(nome, idade);
+            
+            //destructuring
+            // const {name, age} = document.formDados;
+            // console.log(name.value, age.value);
+
+            const dados = {
+                nomeDaPessa: nome,
+                idade,
+                endereco:{
+                    rua: 'Armando Farjado'
+                }
+            }
+            console.log(dados);
+        }
+
+    </script>
+</head>
+<body>
+    
+    
+    <h1>Introdução JavaScript</h1>
+    <script>
+        document.write('<h2>HELLO !</>');
+
+    </script>
+
+    <div id="data"></div>
+
+    <script>
+    </script>
+
+    <form action="#" name="formDados">
+
+        <input type="text" name="nome" id="name">
+        <input type="text" name="idade" id="age">
+
+        <input type="button" value="Carregar dados do Formulário" onclick="carregarDadosForm()">
+
+    </form>
+
+    <button onclick="carregarDados()">Carregar Dados</button>
+
+    <a href="contador.html">Contador</a>
+</body>
+</html>

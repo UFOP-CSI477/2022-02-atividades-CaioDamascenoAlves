@@ -1,5 +1,5 @@
-let { checkIfEmailExists } = require('../../../controllers/donor.controller');
-const Pessoa = require('../../../model/donor.model');
+let { checkIfEmailExists } = require('../../../controllers/user.controller');
+const Pessoa = require('../../../model/user.model');
 
 describe("checkIfEmailExists", () => {
     it("should return true if email exists", async () => {

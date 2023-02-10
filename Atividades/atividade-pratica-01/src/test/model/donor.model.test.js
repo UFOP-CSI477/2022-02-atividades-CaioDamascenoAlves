@@ -2,7 +2,7 @@ require('dotenv').config({path: "./src/.env"});
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../../model/donor.model');
+const User = require('../../model/user.model');
 
 mongoose.set('strictQuery', true);
 

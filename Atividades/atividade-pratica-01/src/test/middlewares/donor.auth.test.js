@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const authMiddleware = require('../../middlewares/donor.auth');
+const authMiddleware = require('../../middlewares/user.auth');
 
 describe('Auth Middleware', () => {
   test('It should correctly decode the token', async () => {

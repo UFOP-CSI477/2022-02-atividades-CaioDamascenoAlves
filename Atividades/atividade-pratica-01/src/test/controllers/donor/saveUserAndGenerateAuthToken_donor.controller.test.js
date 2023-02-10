@@ -1,5 +1,5 @@
-const { saveUserAndGenerateAuthToken } = require('../../../controllers/donor.controller');
-const Pessoa = require('../../../model/donor.model');
+const { saveUserAndGenerateAuthToken } = require('../../../controllers/user.controller');
+const Pessoa = require('../../../model/user.model');
 
 describe("saveUserAndGenerateAuthToken", () => {
     it("should save user and generate auth token", async () => {

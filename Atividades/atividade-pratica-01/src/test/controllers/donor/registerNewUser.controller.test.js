@@ -1,5 +1,5 @@
 const request = require('supertest');
-const donorController = require('../../../controllers/donor.controller')
+const userController = require('../../../controllers/user.controller')
 const app = require('../../../app');
 
 describe("registerNewUser", () => {
@@ -10,7 +10,7 @@ describe("registerNewUser", () => {
     });	
 
 	it("should return a 409 response when an email already exists", async () => {
-		jest.spyOn(donorController, 'checkIfEmailExists').mockImplementation(() => true);
+		jest.spyOn(userController, 'checkIfEmailExists').mockImplementation(() => true);
 		const body = { email: "test@example.com", password: "password", name: "John Doe" };
 		const response = await request(app).post('/api/register').send(body);
 		expect(response.status).toBe(409);

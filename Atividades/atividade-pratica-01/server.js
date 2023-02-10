@@ -8,5 +8,4 @@ server.listen(port, () => {
   console.log('Aplicação executando na porta ...:', port);
 });
 
-
 module.exports = server;

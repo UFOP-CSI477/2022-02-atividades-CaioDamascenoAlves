@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/user.controller');
-const auth = require('../middlewares/auth');
+const auth = require('../middlewares/user.auth');
 
 // ==> Rota responsável por Criar um novo 'User': (POST): localhost:3000/api/v1/register
 router.post('/register', userController.registerNewUser);

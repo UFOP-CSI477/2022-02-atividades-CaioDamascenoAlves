@@ -19,7 +19,7 @@ const LocalColetaSchema = new Schema({
   },
 },{
 	timestamps: true,
-  	collection: 'locaisColeta',
+  collection: 'locaisColeta',
 });
 
 const LocalColeta = mongoose.model('LocalColeta', LocalColetaSchema);

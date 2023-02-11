@@ -24,13 +24,8 @@ const PessoaSchema = new Schema({
   },
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'Uer'
+    ref: 'User'
   },
-  tokens: [
-    {
-      token: { type: String, required: true },
-    },
-  ],
 },{
 	timestamps: true,
   	collection: 'pessoas',

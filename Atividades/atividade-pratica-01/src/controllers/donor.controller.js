@@ -1,4 +1,4 @@
-const Pessoa = require("../models/pessoa.model");
+const Pessoa = require("../models/donor.model");
 const TipoSanguineo = require("../models/TipoSanguineo");
 
 const createPessoa = async (req, res) => {

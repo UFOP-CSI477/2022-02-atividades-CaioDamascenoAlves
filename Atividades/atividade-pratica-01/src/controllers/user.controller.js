@@ -1,3 +1,5 @@
+const User = require("../model/user.model");
+
 const checkIfEmailExists = async email => {
 	let isUser;
 	try {
@@ -50,10 +52,11 @@ const loginUser = async (req, res) => {
 	} catch (err) {
 	  return res.status(400).json({ err });
 	}
-};
+  };
+  
   // ==> Método responsável por retornar um determinado 'User'
-const returnUserProfile = async (req, res) => {
+  const returnUserProfile = async (req, res) => {
 	await res.json(req.userData);
-};
+  };
 
-module.exports = { checkIfEmailExists, saveUserAndGenerateAuthToken, registerNewUser, loginUser, returnUserProfile };
+module.exports = { checkIfEmailExists, saveUserAndGenerateAuthToken, registerNewUser, loginUser, returnUserProfile};

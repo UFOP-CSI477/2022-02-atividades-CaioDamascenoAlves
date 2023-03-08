@@ -1,29 +1,35 @@
-const Pessoa = require("../models/donor.model");
-const TipoSanguineo = require("../models/TipoSanguineo");
+const Pessoa = require("../model/donor.model");
+const TipoSanguineo = require("../model/tipoSanguineo.model");
 
-const createPessoa = async (req, res) => {
+exports.createPessoa = async (req, res) => {
   try {
-    const { nome, rua, numero, complemento, documento, tipoSanguineoId } =
+    const { nome, rua, numero, complemento, documento, tipoSanguineo } =
       req.body;
-    const tipoSanguineo = await TipoSanguineo.findById(tipoSanguineoId);
-    if (!tipoSanguineo) {
-      return res.status(400).send({ error: "Tipo sanguíneo não encontrado" });
-    }
-    const pessoa = await Pessoa.create({
+    const tipo = await TipoSanguineo.findOne({ tipoSanguineo });
+
+    const novaPessoa = new Pessoa({
       nome,
       rua,
       numero,
       complemento,
       documento,
-      tipo_sanguineo: tipoSanguineo._id,
+      user: req.userData._id,
+      tipo: tipo._id,
     });
-    return res.send({ pessoa });
+
+    await novaPessoa.save();
+
+    return res.status(201).json({
+      message: "Pessoa criada com sucesso!",
+      data: novaPessoa,
+    });
   } catch (error) {
-    return res.status(400).send({ error: "Falha ao criar pessoa" });
+    return res.status(400).json({
+      message: "Erro ao criar pessoa!",
+      error: error.message,
+    });
   }
 };
-
-module.exports = { createPessoa };
 
 exports.getAllPessoas = async (req, res) => {
   try {
@@ -32,6 +38,36 @@ exports.getAllPessoas = async (req, res) => {
   } catch (err) {
     res.status(500).send({
       message: err.message || "Erro ao recuperar as pessoas",
+    });
+  }
+};
+
+exports.getPessoa = async (req, res) => {
+  try {
+    if (!req.userData) {
+      return res.status(401).json({
+        message: "Erro ao buscar pessoa!",
+        error: "Usuário não está logado",
+      });
+    }
+
+    const pessoa = await Pessoa.findOne({ user: req.userData._id });
+
+    if (!pessoa) {
+      return res.status(404).json({
+        message: "Erro ao buscar pessoa!",
+        error: "Pessoa não encontrada",
+      });
+    }
+
+    return res.status(200).json({
+      message: "Pessoa encontrada com sucesso!",
+      data: pessoa,
+    });
+  } catch (error) {
+    return res.status(400).json({
+      message: "Erro ao buscar pessoa!",
+      error: error.message,
     });
   }
 };
@@ -53,6 +89,40 @@ exports.getPessoaById = async (req, res) => {
     }
     return res.status(500).send({
       message: "Erro ao recuperar a pessoa com o id " + req.params.id,
+    });
+  }
+};
+
+exports.updatePessoa = async (req, res) => {
+  try {
+    if (!req.userData) {
+      return res.status(401).json({
+        message: "Erro ao atualizar pessoa!",
+        error: "Usuário não está logado",
+      });
+    }
+
+    const pessoa = await Pessoa.findOneAndUpdate(
+      { user: req.userData._id },
+      req.body,
+      { new: true }
+    );
+
+    if (!pessoa) {
+      return res.status(404).json({
+        message: "Erro ao atualizar pessoa!",
+        error: "Pessoa não encontrada",
+      });
+    }
+
+    return res.status(200).json({
+      message: "Pessoa atualizada com sucesso!",
+      data: pessoa,
+    });
+  } catch (error) {
+    return res.status(400).json({
+      message: "Erro ao atualizar pessoa!",
+      error: error.message,
     });
   }
 };

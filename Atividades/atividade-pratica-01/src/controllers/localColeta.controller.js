@@ -1,4 +1,4 @@
-const LocalColeta = require('../models/localColeta.model');
+const LocalColeta = require('../model/localColeta.model');
 
 exports.createLocalColeta = async (req, res) => {
     try {
@@ -108,4 +108,14 @@ exports.deleteLocalColetaById = async (req, res) => {
             message: "Não foi possível deletar o local de coleta com o id " + req.params.id
         });
     }
+};
+
+exports.countLocaisColetas = async (req, res) => {
+  try {
+    const count = await LocalColeta.countDocuments();
+    res.status(200).json({ count });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Não foi possível contar os documentos.' });
+  }
 };

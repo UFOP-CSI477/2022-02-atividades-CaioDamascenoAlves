@@ -1,26 +1,28 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const LocalColetaSchema = new Schema({
-  nome: {
-    type: String,
-    required: true
+const DoacaoSchema = new Schema(
+  {
+    data: {
+      type: Date,
+      required: true,
+    },
+    pessoa: {
+      type: Schema.Types.ObjectId,
+      ref: "Pessoa",
+      required: true,
+    },
+    local: {
+      type: Schema.Types.ObjectId,
+      ref: "LocalColeta",
+      required: true,
+    },
   },
-  rua: {
-    type: String,
-    required: true
-  },
-  numero: {
-    type: Number,
-    required: true
-  },
-  complemento: {
-    type: String
-  },
-},{
-	timestamps: true,
-  collection: 'locaisColeta',
-});
+  {
+    timestamps: true,
+    collection: "locaisColeta",
+  }
+);
 
-const LocalColeta = mongoose.model('LocalColeta', LocalColetaSchema);
-module.exports = LocalColeta;
+const Doacao = mongoose.model("Doacao", DoacaoSchema);
+module.exports = Doacao;

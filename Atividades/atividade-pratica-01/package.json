@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "jest --env node nodemon",
+    "start": "npm run test && npm run dev",
     "dev": "nodemon",
     "test": "jest --env node --detectOpenHandles"
   },

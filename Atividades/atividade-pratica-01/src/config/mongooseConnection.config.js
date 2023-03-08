@@ -21,18 +21,28 @@ const connectToDB = async () => {
   }
 };
 
-
 const closeDBConnection = async () => {
-	try {
-		await mongoose.connection.close();
-		console.log('Conexão com o banco de dados fechada');
-	} catch (err) {
-		console.log(`Erro ao fechar a conexão com o banco de dados: ${err}`);
-		process.exit(1);
-	}
+  try {
+    await mongoose.connection.close();
+    console.log('Conexão com o banco de dados fechada');
+  } catch (err) {
+    console.log(`Erro ao fechar a conexão com o banco de dados: ${err}`);
+    process.exit(1);
+  }
 };
 
-process.on('SIGINT', closeDBConnection);
-process.on('SIGTERM', closeDBConnection);
+process.on('SIGINT', () => {
+	closeDBConnection().then(() => {
+	  console.log('Conexão com o banco de dados fechada com sucesso.');
+	});
+});
+  
+
+process.on('SIGTERM', () => {
+	closeDBConnection().then(() => {
+	  console.log('Conexão com o banco de dados fechada com sucesso.');
+	});
+});
+  
 
 module.exports = { connectToDB, closeDBConnection };

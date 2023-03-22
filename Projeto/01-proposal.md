@@ -19,12 +19,12 @@ O sistema possui funcionalidas CRUD de cinco entidades: User, Pessoa, Pet, Doaç
 
 A estrutura de pastas proporciona uma otima leitura dos codigos, cada parte com sua responsabilidade.
 
-API:
-Pasta config, possui os arquivos para configuração da string de conexão no .env, arquivo de conexão com os bancos de dados NoSQL, MOngoDB e Redis.
-Pasta controller com os modulos e metodos CRUD para cada entidade.
-Pasta middleware com o metodo middleware de atenticaçaõ com JWT.
-Pasta models com os os esquemas para cada entidade.
-Pasta routes com os as rotas da API usando o middleware e metodos exeto nos metodos 'All'
+### API:
+#### Pasta config, possui os arquivos para configuração da string de conexão no .env, arquivo de conexão com os bancos de dados NoSQL, MOngoDB e Redis.
+#### Pasta controller com os modulos e metodos CRUD para cada entidade.
+#### Pasta middleware com o metodo middleware de atenticaçaõ com JWT.
+#### Pasta models com os os esquemas para cada entidade.
+#### Pasta routes com os as rotas da API usando o middleware e metodos exeto nos metodos 'All'
 
 Frontend:
 Pasta assets: com os icones da aplicação.

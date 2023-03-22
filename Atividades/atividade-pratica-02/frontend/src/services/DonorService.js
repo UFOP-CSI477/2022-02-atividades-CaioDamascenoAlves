@@ -71,4 +71,29 @@ export default {
       });
     }
   },
+
+  async DeleteDonor(id) {
+    try {
+      const token = localStorage.getItem("jwt");
+      const response = await Api().delete(`/pessoa/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const { message } = response.data;
+  
+      swal({
+        title: "Sucesso!",
+        text: message,
+        icon: "success",
+      });
+    } catch (error) {
+      swal({
+        title: "Oops!",
+        text: "Erro ao consumir a rota (DELETE) de Donor!",
+        icon: "error",
+      });
+    }
+  },
+
 };

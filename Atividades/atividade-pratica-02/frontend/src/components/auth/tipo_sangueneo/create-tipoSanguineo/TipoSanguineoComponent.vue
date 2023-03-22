@@ -2,6 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 offset-lg-3 col-sm-10 offset-sm-1">
+				<h2>Qual tipo Sanguineo?</h2>
 				<form class="text-center border border-dark p-5"
 					style="margin-top: 70px; height: auto; padding-top: 100px !important"
 					v-on:submit.prevent="CreateSubmitTipoSanguineoForm()">

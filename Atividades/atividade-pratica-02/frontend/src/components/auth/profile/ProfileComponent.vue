@@ -22,8 +22,9 @@
 							<li
 								class="list-group-item bg-dark text-center text-light d-flex justify-content-between align-items-center">
 								<span>Seu Tipo Sanguineo</span>
-								<button class="btn btn-success ml-auto" @click="navigateToUpdateTipoSanguineo">Editar
-									Tipo Sanguíneo</button>
+								<button class="btn btn-success ml-auto" @click="navigateToUpdateTipoSanguineo">
+									<font-awesome-icon :icon="['fas', 'user-edit']" /> Editar Tipo Sanguíneo
+								</button>
 							</li>
 							<li class="list-group-item">Tipo Sanguineo: {{ tiposSanguineos.tipo }}</li>
 							<li class="list-group-item">Fator Sanguineo: {{ tiposSanguineos.fator }}</li>
@@ -32,7 +33,16 @@
 
 						<ul class="list-group ">
 							<li class="list-group-item bg-dark text-center text-light d-flex justify-content-between align-items-center">Dados Pessoais
-								<button class="btn btn-success ml-auto" @click="navigateToUpdateDonor">Editar Dados Pessoais</button>
+								<div class="d-flex justify-content-between  ">
+
+									<button class="btn btn-outline-success mx-5 " @click="navigateToUpdateDonor">
+										<font-awesome-icon :icon="['fas', 'user-edit']" /> Editar Dados Pessoais
+									</button>
+									
+									<button class="btn btn-outline-danger btn-sm " @click="deleteDonor">
+										<font-awesome-icon :icon="['fas', 'trash']" />
+									</button>
+								</div>
 							</li>
 							<li class="list-group-item">Nome: {{ donor.nome }}</li>
 							<li class="list-group-item">Rua: {{ donor.rua }}</li>

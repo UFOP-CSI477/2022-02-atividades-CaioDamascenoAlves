@@ -76,6 +76,14 @@ const routes = [
     },
   },
   {
+    path: "/home",
+    name: "home",
+    component: () => import("../components/auth/home/HomeComponent"),
+    meta: {
+      requireAuth: true,
+    },
+  },
+  {
     path: "/register",
     name: "register",
     component: () => import("../components/auth/register/RegisterComponent"),

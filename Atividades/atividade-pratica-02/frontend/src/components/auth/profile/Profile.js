@@ -1,6 +1,6 @@
 import VueJwtDecode from "vue-jwt-decode";
-import GetTipoSanguineo from "@/services/TipoSanguineoService";
-import GetDonor from "@/services/DonorService";
+import TipoSanguineoService from "@/services/TipoSanguineoService";
+import DonorService from "@/services/DonorService";
 
 export default {
   name: "HomeComponent",
@@ -20,7 +20,7 @@ export default {
     },
     async getTiposSanguineos() {
       try {
-        const tiposSanguineos = await GetTipoSanguineo.GetTipoSanguineo();
+        const tiposSanguineos = await TipoSanguineoService.GetTipoSanguineo();
         this.tiposSanguineos = tiposSanguineos.data;
       } catch (error) {
         swal({
@@ -33,7 +33,7 @@ export default {
 
     async getDonor() {
       try {
-        const donor = await GetDonor.GetDonor();
+        const donor = await DonorService.GetDonor();
         this.donor = donor.data;
       } catch (error) {
         swal({
@@ -41,6 +41,31 @@ export default {
           text: "Alguma coisa deu errado aqui!",
           icon: "error",
         });
+      }
+    },
+
+    async deleteDonor() {
+      try {
+        const confirmacao = await swal({
+          title: "Você tem certeza?",
+          text: "Uma vez deletado, você não poderá voltar atrás!",
+          icon: "warning",
+          buttons: ["Cancelar", "Deletar"],
+          dangerMode: true,
+        });
+
+        if (confirmacao) {
+          const response = await DonorService.DeleteDonor(
+            this.$route.params._id
+          );
+          console.log(response);
+          // aqui você pode fazer algo com a resposta, por exemplo exibir uma mensagem de sucesso
+        } else {
+          swal("Operação cancelada!");
+        }
+      } catch (error) {
+        console.error(error);
+        // aqui você pode exibir uma mensagem de erro para o usuário
       }
     },
 

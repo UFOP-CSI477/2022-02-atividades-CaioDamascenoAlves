@@ -8,7 +8,8 @@
 
 ### Resumo
 
-  (Apresentar um breve resumo sobre o seu trabalho, indicando o contexto e as principais funcionalidades.)
+### Sistema de adoção de pets
+  Este é um projeto de um sistema de adoção de pets que utiliza as tecnologias Node.js, Vue.js, MongoDB e Redis, e é desenvolvido utilizando a metodologia de     desenvolvimento orientado a testes (TDD).
 
 ### 1. Funcionalidades implementadas
 <!-- Descrever as funcionalidades que eram previstas e foram implementas. -->

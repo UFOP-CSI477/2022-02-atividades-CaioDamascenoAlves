@@ -10,18 +10,32 @@
 
 ### 1. Funcionalidades implementadas
   - Registro de Usuário
-  
+  - Incriptação de senha
+  - Geração de token
+  - Cadastro de Doador
+  - Login
+  - Perfil do usuario
+  - Cadastro de Pets
+  - Agendamento de Adoção de Pets
+  - Listagem de Pets doados
+  - Edição de Pets
+  - Edição de Doador
+  - Deleção de Pessoa
+  - Deleção de Pets
+  - Edição da Doação
+  - Deleção da Doação
 ### 2. Funcionalidades previstas e não implementadas
-<!-- Descrever as funcionalidades que eram previstas e não foram implementas, apresentando uma breve justificativa do porquê elas não foram incluídas -->
-
+  - Era previsto fazer um tipo de usuario adiministrado,além de um sistema de arquivos para upload de imagens atravez do cliente.
 ### 3. Outras funcionalidades implementadas
-<!-- Descrever as funcionalidades implementas além daquelas que foram previstas, caso se aplique.  -->
-
+  - O sistema possui cacheamento de consultas como o Login e o GetAllPets.
 ### 4. Principais desafios e dificuldades
-<!-- Descrever os principais desafios encontrados no desenvolvimento do trabalho, quais foram as dificuldades e como elas foram superadas e resolvidas. -->
-
+  - Persistir os dados nas paginas, persistir a foto do pet no sistemad de arquivo. Integrar dois bancos de dados. Fazer testes.
 ### 5. Instruções para instalação e execução
-<!-- Descrever o que deve ser feito para instalar (ou baixar) a aplicação, o que precisa ser configurando (parâmetros, banco de dados e afins) e como executá-la. -->
+Para executar o sistema, é necessário seguir os seguintes passos:
 
+- Clonar o repositório do GitHub em sua máquina local.
+- Instalar as dependências do projeto utilizando o gerenciador de pacotes NPM.
+- Configurar as variáveis de ambiente do sistema, incluindo as credenciais do banco de dados MongoDB e do servidor Redis.
+- Executar o sistema utilizando o comando "npm start".
 ### 6. Referências
 <!-- Referências podem ser incluídas, caso necessário. Utilize o padrão ABNT. -->

@@ -6,11 +6,10 @@
 
 ### Resumo
 
-### Sistema de adoção de pets
   Este é um projeto de um sistema de adoção de pets que utiliza as tecnologias Node.js, Vue.js, MongoDB e Redis, e é desenvolvido utilizando a metodologia de     desenvolvimento orientado a testes (TDD).
 
 ### 1. Funcionalidades implementadas
-  -Registro de Usuário
+  - Registro de Usuário
   
 ### 2. Funcionalidades previstas e não implementadas
 <!-- Descrever as funcionalidades que eram previstas e não foram implementas, apresentando uma breve justificativa do porquê elas não foram incluídas -->

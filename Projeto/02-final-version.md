@@ -1,6 +1,6 @@
 # **CSI606-2021-02 - Remoto - Trabalho Final - Resultados**
 
-## *Aluna(o): Caio Damasceno ALves*
+## *Aluna(o): Caio Damasceno Alves*
 
 --------------
 

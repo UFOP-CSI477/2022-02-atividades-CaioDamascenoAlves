@@ -1,10 +1,8 @@
 # **CSI606-2021-02 - Remoto - Trabalho Final - Resultados**
 
-## *Aluna(o): Princesa Leia (Luke Skywalker)*
+## *Aluna(o): Caio Damasceno ALves*
 
 --------------
-
-<!-- Este documento tem como objetivo apresentar o projeto desenvolvido, considerando o que foi definido na proposta e o produto final. -->
 
 ### Resumo
 
@@ -12,7 +10,7 @@
   Este é um projeto de um sistema de adoção de pets que utiliza as tecnologias Node.js, Vue.js, MongoDB e Redis, e é desenvolvido utilizando a metodologia de     desenvolvimento orientado a testes (TDD).
 
 ### 1. Funcionalidades implementadas
-<!-- Descrever as funcionalidades que eram previstas e foram implementas. -->
+  -Registro de Usuário
   
 ### 2. Funcionalidades previstas e não implementadas
 <!-- Descrever as funcionalidades que eram previstas e não foram implementas, apresentando uma breve justificativa do porquê elas não foram incluídas -->

@@ -17,3 +17,6 @@ Este é um sistema de adoção de pets desenvolvido usando Node.js, Vue.js, Mong
 O sistema segue a arquitetura cliente-servidor e utiliza o padrão MVC (Model-View-Controller). O backend é desenvolvido em Node.js, utilizando o framework Express.js. O banco de dados MongoDB é utilizado para armazenar informações dos usuários e dos pets. O Redis é utilizado como cache para melhorar a performance da aplicação.
 
 O frontend é desenvolvido em Vue.js, utilizando o framework Vuetify para estilização e layout.
+
+## Desenvolvimento
+O desenvolvimento do sistema segue a metodologia TDD (Test Driven Development). Os testes são escritos utilizando a biblioteca Jest e são executados automaticamente durante o processo de build.
